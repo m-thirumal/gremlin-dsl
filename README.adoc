@@ -53,4 +53,5 @@ image::doc/img/annotation.png[annotation, 1200, 800]
 * Right click on your project > Build Path > Configure Build Path
 * In sources tag, click on `[Add Folder]` button
 * Check `target/generated-sources/annotations`
+
 image::doc/img/dsl-annotation.png[dsl, 600, 400]

@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: gremlin-dsl
+  profiles: 
+    active: DEV
+  main:
+    banner-mode: console
+server:
+  http2:
+    enabled: true
+  port: 9034
+logging:
+  level:
+    '[tn.thirumal]': debug
+  file:
+    path: logs
+    name: logs/gremlin-dsl.log
+    
+database:
+  url: development-instance-1.x.ap-south-1.neptune.amazonaws.com
+  port: 8182
