@@ -1,7 +1,14 @@
 HELP.md
-target/
+#:wq!
+#target/
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
+target/classes/
+target/maven-status/
+target/*.jar
+target/test-classes/
+target/surefire-reports/
+target/maven-archiver/
+target/*.original
 !**/src/test/**/target/
 
 ### STS ###
