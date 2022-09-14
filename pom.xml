@@ -28,6 +28,10 @@
 		    <artifactId>gremlin-annotations</artifactId>
 		    <version>3.6.1</version>
 		</dependency>
+		<dependency> 
+		    <groupId>org.springframework.boot</groupId> 
+		    <artifactId>spring-boot-starter-validation</artifactId> 
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
 		<!--<dependency>
 		    <groupId>org.springdoc</groupId>

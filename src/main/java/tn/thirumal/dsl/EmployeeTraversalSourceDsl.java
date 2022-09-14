@@ -30,7 +30,7 @@ public class EmployeeTraversalSourceDsl extends GraphTraversalSource {
         super(connection);
     }
 	
-	public GraphTraversal<Vertex, Vertex> auction(String... properties) {
+	public GraphTraversal<Vertex, Vertex> employer(String... properties) {
         GraphTraversalSource clone = this.clone();
 
         // Manually add a "start" step for the traversal in this case the equivalent of V(). GraphStep is marked
@@ -39,7 +39,7 @@ public class EmployeeTraversalSourceDsl extends GraphTraversalSource {
         GraphTraversal<Vertex, Vertex> traversal = new DefaultGraphTraversal<>(clone);
         traversal.asAdmin().addStep(new GraphStep<>(traversal.asAdmin(), Vertex.class, true));
 
-        traversal = traversal.hasLabel("employee");
+        traversal = traversal.hasLabel("Employer");
         if (properties.length > 0) {
         	traversal = traversal.hasId(properties);
         }

@@ -39,6 +39,11 @@ import org.apache.tinkerpop.gremlin.structure.VertexProperty;
 
 public interface EmployeeTraversal<S, E> extends EmployeeTraversalDsl<S, E> {
   @Override
+  default EmployeeTraversal<S, Vertex> getEmployer(String employerId) {
+    return (EmployeeTraversal) EmployeeTraversalDsl.super.getEmployer(employerId);
+  }
+
+  @Override
   default <E2> EmployeeTraversal<S, E2> map(final Function<Traverser<E>, E2> function) {
     return (EmployeeTraversal) EmployeeTraversalDsl.super.map(function);
   }

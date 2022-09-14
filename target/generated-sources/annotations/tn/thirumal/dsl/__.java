@@ -39,6 +39,10 @@ public final class __ {
     return new DefaultEmployeeTraversal<>();
   }
 
+  public static <S> EmployeeTraversal<S, Vertex> getEmployer(String employerId) {
+    return __.<S>start().getEmployer(employerId);
+  }
+
   public static <A> EmployeeTraversal<A, A> __(final A... starts) {
     return inject(starts);
   }

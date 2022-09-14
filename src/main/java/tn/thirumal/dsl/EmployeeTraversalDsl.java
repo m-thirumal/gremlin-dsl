@@ -2,6 +2,13 @@ package tn.thirumal.dsl;
 
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.GremlinDsl;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversal;
+import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.__;
+import org.apache.tinkerpop.gremlin.structure.T;
+import org.apache.tinkerpop.gremlin.structure.Vertex;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import jakarta.validation.constraints.NotBlank;
 
 /**
  * 
@@ -13,5 +20,13 @@ import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversal;
 @GremlinDsl(traversalSource = "tn.thirumal.dsl.EmployeeTraversalSourceDsl")
 public interface EmployeeTraversalDsl<S, E> extends GraphTraversal.Admin<S, E> {
 
+	Logger logger = LoggerFactory.getLogger(EmployeeTraversalDsl.class);
+	
+	
+	@SuppressWarnings("unchecked")
+	default GraphTraversal<S, Vertex> getEmployer(@NotBlank String employerId) {
+		 return hasId(employerId).fold().coalesce(
+					__.unfold(), __.addV("Employer").property(T.id, employerId).property("name", "Galaxy Corp"));
+    }
 	
 }

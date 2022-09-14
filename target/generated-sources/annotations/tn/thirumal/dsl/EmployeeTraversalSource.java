@@ -158,9 +158,9 @@ public class EmployeeTraversalSource extends EmployeeTraversalSourceDsl {
   }
 
   @Override
-  public EmployeeTraversal<Vertex, Vertex> auction(String... properties) {
+  public EmployeeTraversal<Vertex, Vertex> employer(String... properties) {
     EmployeeTraversalSource clone = this.clone();
-    return new DefaultEmployeeTraversal (clone, super.auction(properties).asAdmin());
+    return new DefaultEmployeeTraversal (clone, super.employer(properties).asAdmin());
   }
 
   @Override
