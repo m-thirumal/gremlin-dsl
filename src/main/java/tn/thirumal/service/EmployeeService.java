@@ -5,6 +5,7 @@ package tn.thirumal.service;
 
 import java.util.Map;
 
+import org.apache.tinkerpop.gremlin.structure.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,10 +25,10 @@ public class EmployeeService {
 	EmployeeTraversalSource g;
 	
 	
-	public Employee appoint() {
+	public Map<Object, Object> appoint(String name) {
 		Map<Object, Object> employer = g.employer().getEmployer(EMPLOYER_ID).elementMap().next();
-		System.out.println(employer);
-		return null;
+		System.out.println("Appointing " + name + " in " + employer + " Company");
+		return g.employer(employer.get(T.id).toString()).appoint(Employee.builder().name(name).build()).elementMap().next();
 	}
 
 }
