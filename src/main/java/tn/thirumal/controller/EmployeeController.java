@@ -30,5 +30,10 @@ public class EmployeeController {
 		}
 		return employeeService.appoint(name);
 	}
+	
+	@GetMapping(value = "/transaction")
+	public boolean transactionExample() {
+		return employeeService.transactionExample();
+	}
 
 }
