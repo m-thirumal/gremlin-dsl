@@ -42,35 +42,18 @@ public class EmployeeTraversalSource extends EmployeeTraversalSourceDsl {
   }
 
   @Override
-  public EmployeeTraversalSource with(final String key) {
+  public EmployeeTraversalSource with(String key) {
     return (EmployeeTraversalSource) super.with(key);
   }
 
   @Override
-  public EmployeeTraversalSource with(final String key, final Object value) {
+  public EmployeeTraversalSource with(String key, Object value) {
     return (EmployeeTraversalSource) super.with(key,value);
   }
 
   @Override
-  public EmployeeTraversalSource withStrategies(final TraversalStrategy... traversalStrategies) {
-    return (EmployeeTraversalSource) super.withStrategies(traversalStrategies);
-  }
-
-  @Override
-  public EmployeeTraversalSource withoutStrategies(
-      final Class<? extends TraversalStrategy>... traversalStrategyClasses) {
-    return (EmployeeTraversalSource) super.withoutStrategies(traversalStrategyClasses);
-  }
-
-  @Override
-  public EmployeeTraversalSource withComputer(final Computer computer) {
-    return (EmployeeTraversalSource) super.withComputer(computer);
-  }
-
-  @Override
-  public EmployeeTraversalSource withComputer(
-      final Class<? extends GraphComputer> graphComputerClass) {
-    return (EmployeeTraversalSource) super.withComputer(graphComputerClass);
+  public EmployeeTraversalSource withBulk(boolean useBulk) {
+    return (EmployeeTraversalSource) super.withBulk(useBulk);
   }
 
   @Override
@@ -79,82 +62,95 @@ public class EmployeeTraversalSource extends EmployeeTraversalSourceDsl {
   }
 
   @Override
-  public <A> EmployeeTraversalSource withSideEffect(final String key,
-      final Supplier<A> initialValue, final BinaryOperator<A> reducer) {
-    return (EmployeeTraversalSource) super.withSideEffect(key,initialValue,reducer);
+  public EmployeeTraversalSource withComputer(Computer computer) {
+    return (EmployeeTraversalSource) super.withComputer(computer);
   }
 
   @Override
-  public <A> EmployeeTraversalSource withSideEffect(final String key, final A initialValue,
-      final BinaryOperator<A> reducer) {
-    return (EmployeeTraversalSource) super.withSideEffect(key,initialValue,reducer);
-  }
-
-  @Override
-  public <A> EmployeeTraversalSource withSideEffect(final String key, final A initialValue) {
-    return (EmployeeTraversalSource) super.withSideEffect(key,initialValue);
-  }
-
-  @Override
-  public <A> EmployeeTraversalSource withSideEffect(final String key,
-      final Supplier<A> initialValue) {
-    return (EmployeeTraversalSource) super.withSideEffect(key,initialValue);
-  }
-
-  @Override
-  public <A> EmployeeTraversalSource withSack(final Supplier<A> initialValue,
-      final UnaryOperator<A> splitOperator, final BinaryOperator<A> mergeOperator) {
-    return (EmployeeTraversalSource) super.withSack(initialValue,splitOperator,mergeOperator);
-  }
-
-  @Override
-  public <A> EmployeeTraversalSource withSack(final A initialValue,
-      final UnaryOperator<A> splitOperator, final BinaryOperator<A> mergeOperator) {
-    return (EmployeeTraversalSource) super.withSack(initialValue,splitOperator,mergeOperator);
-  }
-
-  @Override
-  public <A> EmployeeTraversalSource withSack(final A initialValue) {
-    return (EmployeeTraversalSource) super.withSack(initialValue);
-  }
-
-  @Override
-  public <A> EmployeeTraversalSource withSack(final Supplier<A> initialValue) {
-    return (EmployeeTraversalSource) super.withSack(initialValue);
-  }
-
-  @Override
-  public <A> EmployeeTraversalSource withSack(final Supplier<A> initialValue,
-      final UnaryOperator<A> splitOperator) {
-    return (EmployeeTraversalSource) super.withSack(initialValue,splitOperator);
-  }
-
-  @Override
-  public <A> EmployeeTraversalSource withSack(final A initialValue,
-      final UnaryOperator<A> splitOperator) {
-    return (EmployeeTraversalSource) super.withSack(initialValue,splitOperator);
-  }
-
-  @Override
-  public <A> EmployeeTraversalSource withSack(final Supplier<A> initialValue,
-      final BinaryOperator<A> mergeOperator) {
-    return (EmployeeTraversalSource) super.withSack(initialValue,mergeOperator);
-  }
-
-  @Override
-  public <A> EmployeeTraversalSource withSack(final A initialValue,
-      final BinaryOperator<A> mergeOperator) {
-    return (EmployeeTraversalSource) super.withSack(initialValue,mergeOperator);
-  }
-
-  @Override
-  public EmployeeTraversalSource withBulk(final boolean useBulk) {
-    return (EmployeeTraversalSource) super.withBulk(useBulk);
+  public EmployeeTraversalSource withComputer(Class<? extends GraphComputer> graphComputerClass) {
+    return (EmployeeTraversalSource) super.withComputer(graphComputerClass);
   }
 
   @Override
   public EmployeeTraversalSource withPath() {
     return (EmployeeTraversalSource) super.withPath();
+  }
+
+  @Override
+  public <A> EmployeeTraversalSource withSack(A initialValue) {
+    return (EmployeeTraversalSource) super.withSack(initialValue);
+  }
+
+  @Override
+  public <A> EmployeeTraversalSource withSack(Supplier<A> initialValue) {
+    return (EmployeeTraversalSource) super.withSack(initialValue);
+  }
+
+  @Override
+  public <A> EmployeeTraversalSource withSack(Supplier<A> initialValue,
+      UnaryOperator<A> splitOperator) {
+    return (EmployeeTraversalSource) super.withSack(initialValue,splitOperator);
+  }
+
+  @Override
+  public <A> EmployeeTraversalSource withSack(A initialValue, UnaryOperator<A> splitOperator) {
+    return (EmployeeTraversalSource) super.withSack(initialValue,splitOperator);
+  }
+
+  @Override
+  public <A> EmployeeTraversalSource withSack(Supplier<A> initialValue,
+      BinaryOperator<A> mergeOperator) {
+    return (EmployeeTraversalSource) super.withSack(initialValue,mergeOperator);
+  }
+
+  @Override
+  public <A> EmployeeTraversalSource withSack(A initialValue, BinaryOperator<A> mergeOperator) {
+    return (EmployeeTraversalSource) super.withSack(initialValue,mergeOperator);
+  }
+
+  @Override
+  public <A> EmployeeTraversalSource withSack(Supplier<A> initialValue,
+      UnaryOperator<A> splitOperator, BinaryOperator<A> mergeOperator) {
+    return (EmployeeTraversalSource) super.withSack(initialValue,splitOperator,mergeOperator);
+  }
+
+  @Override
+  public <A> EmployeeTraversalSource withSack(A initialValue, UnaryOperator<A> splitOperator,
+      BinaryOperator<A> mergeOperator) {
+    return (EmployeeTraversalSource) super.withSack(initialValue,splitOperator,mergeOperator);
+  }
+
+  @Override
+  public <A> EmployeeTraversalSource withSideEffect(String key, A initialValue) {
+    return (EmployeeTraversalSource) super.withSideEffect(key,initialValue);
+  }
+
+  @Override
+  public <A> EmployeeTraversalSource withSideEffect(String key, Supplier<A> initialValue) {
+    return (EmployeeTraversalSource) super.withSideEffect(key,initialValue);
+  }
+
+  @Override
+  public <A> EmployeeTraversalSource withSideEffect(String key, Supplier<A> initialValue,
+      BinaryOperator<A> reducer) {
+    return (EmployeeTraversalSource) super.withSideEffect(key,initialValue,reducer);
+  }
+
+  @Override
+  public <A> EmployeeTraversalSource withSideEffect(String key, A initialValue,
+      BinaryOperator<A> reducer) {
+    return (EmployeeTraversalSource) super.withSideEffect(key,initialValue,reducer);
+  }
+
+  @Override
+  public EmployeeTraversalSource withStrategies(TraversalStrategy... traversalStrategies) {
+    return (EmployeeTraversalSource) super.withStrategies(traversalStrategies);
+  }
+
+  @Override
+  public EmployeeTraversalSource withoutStrategies(
+      Class<? extends TraversalStrategy>... traversalStrategyClasses) {
+    return (EmployeeTraversalSource) super.withoutStrategies(traversalStrategyClasses);
   }
 
   @Override
